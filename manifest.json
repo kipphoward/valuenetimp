@@ -6,8 +6,8 @@
 
   "name": "Valuenet form improvements",
   "short_name": "valuenetImp",
-  "description": "This extension formats phone numbers on ValueNet appraisal CreateOrder pages",
-  "version": "0.1.3",
+  "description": "This extension formats phone numbers and computes age on ValueNet appraisal pages",
+  "version": "0.1.4",
   "icons": {
     "32": "GreenPanes32.png"
   },
@@ -18,6 +18,15 @@
           "*://orders.valuenetweb.com/Default.html"
         ],
         "js": ["formatPhone.js"],
+        "run_at": "document_idle",
+        "all_frames": true
+      },  
+      {
+        "matches": [
+          "*://orders.valuenetweb.com/Order/CreateOrder.aspx*",
+          "*://orders.valuenetweb.com/Default.html"
+        ],
+        "js": ["computeAge.js"],
         "run_at": "document_idle",
         "all_frames": true
       }
